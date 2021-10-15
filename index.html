@@ -82,7 +82,10 @@
                         <div class="col-lg-5">
                             <div class="mt-40 home-2-content">
                                 <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Redirection</h1>
-                                <p class="text-white-70 mt-4 f-15 mb-0" id="redirectTo"><a href="addlink.html" class="nav-link">Add new url</a></p>
+								<h3><a href="addlink.html" style="color: yellow">> Add new url</a></h3>
+								<h3><a href="https://silverwolfceh.github.io/?i=5jb20" style="color: yellow">> My github</a></h3>
+								<h3><a href="https://silverwolfceh.github.io/?i=RzL21" style="color: yellow">> Source download</a></h3>
+
                                 <div class="mt-5" id="goNow" style="display: none;">
                                     <a href="#" class="btn btn-custom mr-4" id="urlgoNow">Redirect Now</a>
                                 </div>
@@ -133,12 +136,13 @@
     </script>
     <script>
         $(function(){
-            $('#redirectTo').text('Loading URL, please wait ...');
             $('#goNow').hide();
             var url_string = window.location.href;
             var url = new URL(url_string);
             var code = url.searchParams.get("i");
-            $.ajax({
+			if(code) {
+				$('#redirectTo').text('Loading URL, please wait ...');
+				$.ajax({
                 url: 'https://script.google.com/macros/s/AKfycbwHfEm6ZAhxlwfwO-wJH4OxstqQqrBpaX-Hqgsvf3O_j7fK_S1RLRwuAMYOsJs3tvoiKQ/exec?type=2&url=' + code,
                 type: 'GET',
                 success: function(resp){
@@ -152,6 +156,8 @@
                     }
                 },
             });
+			}
+            
         });
     </script>
 
