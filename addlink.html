@@ -168,6 +168,7 @@
 		var success_ops = "<span style='color:green'>Operation succedded. Your new url is above</span>";
 		var error_network = "<span style='color:red'>Operation failed. Server error</span>";
 		var error_invalid = "<span style='color:red'>Operation failed. Invalid url</span>";
+		var copy_done = "<span style='color:blue'>New url has been copied to clipboard</span>";
         $('#contact-form').submit(function(e){
             $('#btnsubmitArea').hide();
             e.preventDefault();
@@ -185,6 +186,7 @@
                             $('#urlneedShort').attr('readonly', 'readonly');
 							$('#simple-msg').html(success_ops);
 							$('#btnsubmitArea').show();
+							setTimeout(copytoclipboard, 2000);
                         } else {
                             $('#simple-msg').html(error_network);
 							$('#btnsubmitArea').show();
@@ -206,6 +208,15 @@
             return true;
           }
         }
+		
+		function copytoclipboard() {
+			var copyText = document.getElementById("urlneedShort");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999); /* For mobile devices */
+			/* Copy the text inside the text field */
+			navigator.clipboard.writeText(copyText.value);
+			('#simple-msg').html(copy_done);
+		}
     </script>
 
 </body>
