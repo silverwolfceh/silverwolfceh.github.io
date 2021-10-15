@@ -165,6 +165,9 @@
         });
     </script>
     <script>
+		var success_ops = "<span style='color:green'>Operation succedded. Your new url is above</span>";
+		var error_network = "<span style='color:red'>Operation failed. Server error</span>";
+		var error_invalid = "<span style='color:red'>Operation failed. Invalid url</span>";
         $('#contact-form').submit(function(e){
             $('#btnsubmitArea').hide();
             e.preventDefault();
@@ -178,18 +181,21 @@
                     success: function(resp){
                         if ((resp.length > 4) && (resp.length < 9)) {
 							var url = location.origin;
-                            $('#urlneedShort').val(url + '?i=' + resp);
+                            $('#urlneedShort').val(url + '?i=' + resp).select();
                             $('#urlneedShort').attr('readonly', 'readonly');
+							$('#simple-msg').html(success_ops);
 							$('#btnsubmitArea').show();
                         } else {
-                            $('#simple-msg').val('Operation failed. Please check your url');
+                            $('#simple-msg').html(error_network);
 							$('#btnsubmitArea').show();
                         }
                     },
                 });
             } else {
-                alert('URL is not valid :( ');
-                location.reload();
+                $('#simple-msg').html(error_invalid);
+				$('#urlneedShort').val("");
+				$('#btnsubmitArea').show();
+                //location.reload();
             }
         });
         function ValidURL(str) {
