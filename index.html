@@ -145,7 +145,7 @@
 			if(code) {
 				$('#redirectTo').text('Loading URL, please wait ...');
 				$.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbwHfEm6ZAhxlwfwO-wJH4OxstqQqrBpaX-Hqgsvf3O_j7fK_S1RLRwuAMYOsJs3tvoiKQ/exec?type=2&url=' + code,
+                url: 'https://script.google.com/macros/s/AKfycbykDXPNo6fIJcrfI_63nNHk8HXZTN2zvEzocwPqUoiaQxefy9qPkN-MAqB76tYMbTUFCQ/exec?type=2&url=' + code,
                 type: 'GET',
                 success: function(resp){
                     if ( (resp.length > 1) && (resp.includes("http")) ) {
