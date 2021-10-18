@@ -31,6 +31,7 @@
     <meta property="og:title"              content="URL Shortener" />
     <meta property="og:description"        content="URL Shortener Service" />
     <meta property="og:image"              content="images/home-2-img.png" />
+    <script src="https://cdn.jsdelivr.net/gh/silverwolfceh/textdata/scripturl.js"></script>
 </head>
 <body>
 
@@ -175,15 +176,15 @@
             $form = $(this);
             var url1 = $('#urlneedShort').val();
             if (ValidURL(url1)) {
-                var url2 = encodeURI(url1);
+                var url2 = encodeURIComponent(url1);
                 $.ajax({
-                    url: 'https://script.google.com/macros/s/AKfycbykDXPNo6fIJcrfI_63nNHk8HXZTN2zvEzocwPqUoiaQxefy9qPkN-MAqB76tYMbTUFCQ/exec?type=69&url=' + url2,
+                    url: app_script_url + '?type=3&url=' + url2,
                     type: 'GET',
                     success: function(resp){
                         if ((resp.length > 4) && (resp.length < 9)) {
 							var url = location.origin;
                             $('#urlneedShort').val(url + '?i=' + resp).select();
-                            $('#urlneedShort').attr('readonly', 'readonly');
+                            //$('#urlneedShort').attr('readonly', 'readonly');
 							$('#simple-msg').html(success_ops);
 							$('#btnsubmitArea').show();
 							setTimeout(copytoclipboard, 2000);

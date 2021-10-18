@@ -31,6 +31,7 @@
     <meta property="og:title"              content="URL Shortener" />
     <meta property="og:description"        content="URL Shortener Service" />
     <meta property="og:image"              content="images/home-2-img.png" />
+    <script src="https://cdn.jsdelivr.net/gh/silverwolfceh/textdata/scripturl.js"></script>
 </head>
 <body>
 
@@ -145,13 +146,14 @@
 			if(code) {
 				$('#redirectTo').text('Loading URL, please wait ...');
 				$.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbykDXPNo6fIJcrfI_63nNHk8HXZTN2zvEzocwPqUoiaQxefy9qPkN-MAqB76tYMbTUFCQ/exec?type=2&url=' + code,
+                url: app_script_url + '?type=2&url=' + code,
                 type: 'GET',
                 success: function(resp){
                     if ( (resp.length > 1) && (resp.includes("http")) ) {
                         $('#redirectTo').text('Redirecting to: ' + resp);
                         $('#urlgoNow').attr('href', resp);
                         $('#goNow').show();
+                        resp = decodeURI(resp);
                         var wait3s = setTimeout(function(){ window.location = resp; }, 1500);
                     } else {
                         $('#redirectTo').text("Can't find any url match with the code");
