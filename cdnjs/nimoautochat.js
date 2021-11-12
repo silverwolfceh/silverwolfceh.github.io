@@ -27,7 +27,7 @@ var keywords_load_finished = false;
 var msg_items;
 var last_msg = "";
 var kw_enable = true;
-var prefix = "[🔥Auto] ";
+var prefix = "[🔥Bot] ";
 
 var idols = {"922745114" : "MinHii🎹", "177713304" : "Vũ"};
 var NG = "NOT_SUPPORT";
