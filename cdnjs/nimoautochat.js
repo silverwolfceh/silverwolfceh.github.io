@@ -7,8 +7,7 @@ var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha �
                "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
                "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
                "Hi, please help by following IDOL. Thanks so much ❤️",
-               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️",
-               "IDOL sắp 10K follow rồi, mọi người giúp với ạ 🥰"
+               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
               ];
 var chatmsg_egg = ["Mọi người vào lụm trứng cho IDOL xin 1 follow chúc mọi người một ngày zui ze ❤️❤️❤️",
                    "Please follow the streamer, we have a lot of eggs will be given out you know?",
