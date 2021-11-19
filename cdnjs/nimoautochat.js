@@ -1,17 +1,17 @@
 var $ = window.jQuery;
-// var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha ❤️",
-//                "Hi everyone, welcome! Please also follow IDOL to be chilled with songs 😎",
-//                "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
-//                "Thanks for joining this channel, please help to follow IDOL.You can also request songs",
-//                "Cám ơn mọi người đã vào room nha, mọi người cho IDOL xin 1 follow ạ ❤️❤️❤️",
-//                "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
-//                "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
-//                "Hi, please help by following IDOL. Thanks so much ❤️",
-//                "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
-//               ];
-var chatmsg_normal = ["Mọi người vào room có thể cho IDOL xin 1 trứng không?",
-                     "IDOL đang xin trứng làm thử thách, mọi người giúp nha....",
-                     "Thử thách 'mỗi quả trứng như 1 mũi tên xuyên vào thận của user top1'"]
+var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha ❤️",
+               "Hi everyone, welcome! Please also follow IDOL to be chilled with songs 😎",
+               "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
+               "Thanks for joining this channel, please help to follow IDOL.You can also request songs",
+               "Cám ơn mọi người đã vào room nha, mọi người cho IDOL xin 1 follow ạ ❤️❤️❤️",
+               "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
+               "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
+               "Hi, please help by following IDOL. Thanks so much ❤️",
+               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
+              ];
+// var chatmsg_normal = ["Mọi người vào room có thể cho IDOL xin 1 trứng không?",
+//                      "IDOL đang xin trứng làm thử thách, mọi người giúp nha....",
+//                      "Thử thách 'mỗi quả trứng như 1 mũi tên xuyên vào thận của user top1'"]
 var chatmsg_egg = ["Mọi người vào lụm trứng cho IDOL xin 1 follow chúc mọi người một ngày zui ze ❤️❤️❤️",
                    "Please follow the streamer, we have a lot of eggs will be given out you know?",
                    "Chúc mọi người lụm được kim cương nha, yêu mọi người ❤️",
