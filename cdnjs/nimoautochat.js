@@ -32,7 +32,7 @@ var last_msg = "";
 var kw_enable = true;
 var prefix = "[🔥Bot] ";
 
-var idols = {"922745114" : "MinHii🎹", "177713304" : "Vũ"};
+var idols = {"922745114" : "MinHii🎹", "177713304" : "Vũ", "70617884" : "Quincy"};
 var NG = "NOT_SUPPORT";
 var MODE_EGG = "eggg";
 var MODE_OFFLINE = "offline";
@@ -45,9 +45,9 @@ var reload_after_second = 1*60*60*1000; // Reload after 1 hour
 
 $(document).ready(function(){
    register_cbox();
-   load_keywords();
+   //load_keywords();
    msg_items = document.getElementsByClassName('nimo-room__chatroom__message-item');
-   keyword_check();
+   //keyword_check();
    pause_stream();
    if(check_chatmsg_compability()) {
        main();
