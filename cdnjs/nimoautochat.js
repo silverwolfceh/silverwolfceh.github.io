@@ -1,22 +1,31 @@
 var $ = window.jQuery;
-var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha ❤️",
-               "Hi everyone, welcome! Please also follow IDOL to be chilled with songs 😎",
+//var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha ❤️",
+//               "Hi everyone, welcome! Please also follow IDOL to be chilled with songs 😎",
+//               "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
+//               "Thanks for joining this channel, please help to follow IDOL.You can also request songs",
+//               "Cám ơn mọi người đã vào room nha, mọi người cho IDOL xin 1 follow ạ ❤️❤️❤️",
+//               "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
+//               "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
+//               "Hi, please help by following IDOL. Thanks so much ❤️",
+//               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
+//              ];
+var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 follow nha ❤️",
+               "Ở đây có nhạc hay, idol xinh đẹp, admin cute :D Xin hãy follow đi ạ 😎",
                "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
-               "Thanks for joining this channel, please help to follow IDOL.You can also request songs",
-               "Cám ơn mọi người đã vào room nha, mọi người cho IDOL xin 1 follow ạ ❤️❤️❤️",
-               "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
-               "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
-               "Hi, please help by following IDOL. Thanks so much ❤️",
-               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
+               "Hello my dears, can you help to follow idol? ❤️",
+               "Hey, thanks for visisting this channel. Would you please follow idol? Thanks",
+               "We have good music, great idol and cute admins, we are missing your follow :)",
+               "Có ai chưa follow không ạ? Follow đi mà, please....",
+               "Bạn có cảm thấy buồn hay vui, thì vẫn có thể vào đây nhé. Ở đây chúng ta là 1 nhà mà ❤️",
+               "idol đang cần 2000 follow, mọi người giúp 1 tay với ạ",
+			   "Hello guys, we need 3000 follow, could you please help?"
               ];
-// var chatmsg_normal = ["Mọi người vào room có thể cho IDOL xin 1 trứng không?",
-//                      "IDOL đang xin trứng làm thử thách, mọi người giúp nha....",
-//                      "Thử thách 'mỗi quả trứng như 1 mũi tên xuyên vào thận của user top1'"]
+
 var chatmsg_egg = ["Mọi người vào lụm trứng cho IDOL xin 1 follow chúc mọi người một ngày zui ze ❤️❤️❤️",
-                   "Please follow the streamer, we have a lot of eggs will be given out you know?",
+                   "Please follow the idol, we have a lot of eggs will be given out for you",
                    "Chúc mọi người lụm được kim cương nha, yêu mọi người ❤️",
-                   "Hey, good luck guys. Don't forget to follow IDOL, you will have more luck for sure ❤️",
-                   "Trứng còn nhiều, từ từ lụm và chớ quên follow nha người ơi 😝"];
+                   "Vào nhặt trúng có thể cho IDOL xin follow không UwU ❤️"
+				];
                    
 var chatmsg_offline = [ "Hi mọi người, IDOL sẽ live sớm thôi, cám ơn mọi người đã chờ",
                        "Chào mọi người, xíu xíu nữa là IDOL sẽ online nhé ❤️",
@@ -30,29 +39,33 @@ var keywords_load_finished = false;
 var msg_items;
 var last_msg = "";
 var kw_enable = true;
-var prefix = "[🔥Bot] ";
+var prefix = "[🤖] ";
 
-var idols = {"922745114" : "MinHii🎹", "177713304" : "Vũ", "70617884" : "Quincy"};
+var idols = {"922745114" : "MinHii🎹", "177713304" : "Khói", "70617884" : "Quincy"};
 var NG = "NOT_SUPPORT";
 var MODE_EGG = "eggg";
 var MODE_OFFLINE = "offline";
 var MODE_NORMAL = "normal";
 var msg_interval = 20000;
 var chatmsg = {[MODE_OFFLINE]: chatmsg_offline, [MODE_EGG]: chatmsg_egg, [MODE_NORMAL]:  chatmsg_normal};
-var timeintervals = {[MODE_OFFLINE]: 1*60*1000, [MODE_EGG]: 180000, [MODE_NORMAL]:  5*60*1000};
+var timeintervals = {[MODE_OFFLINE]: 1*60*1000, [MODE_EGG]: 180000, [MODE_NORMAL]:  3*60*1000};
 
 var reload_after_second = 1*60*60*1000; // Reload after 1 hour
 
 $(document).ready(function(){
    register_cbox();
    //load_keywords();
-   msg_items = document.getElementsByClassName('nimo-room__chatroom__message-item');
+   read_chatitem();
    //keyword_check();
    pause_stream();
    if(check_chatmsg_compability()) {
        main();
    }
 });
+
+function read_chatitem() {
+	msg_items = document.getElementsByClassName('nimo-room__chatroom__message-item');
+}
 
 function keywords_status() {
     if(keywords_load_finished) {
@@ -118,6 +131,7 @@ function is_lastmessage_sent() {
 }
 function keyword_check() {
     if(kw_enable) {
+		read_chatitem();
         if(cbox_is_playable()) {
             try{
                 var msg = msg_items[msg_items.length-1].getElementsByClassName("n-as-vtm")[0].innerText;
@@ -125,7 +139,7 @@ function keyword_check() {
                     last_msg = msg;
                     var wlcm_msg = get_welcome_msg(last_msg);
                     if(wlcm_msg != "") {
-			last_msg = wlcm_msg;
+						last_msg = wlcm_msg;
                         send_message(wlcm_msg, "WELCOME MSG");
                     }
                 }
