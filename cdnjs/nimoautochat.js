@@ -1,14 +1,4 @@
 var $ = window.jQuery;
-//var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 cái follow nha ❤️",
-//               "Hi everyone, welcome! Please also follow IDOL to be chilled with songs 😎",
-//               "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
-//               "Thanks for joining this channel, please help to follow IDOL.You can also request songs",
-//               "Cám ơn mọi người đã vào room nha, mọi người cho IDOL xin 1 follow ạ ❤️❤️❤️",
-//               "Hi guys, you know we have a great idol here :) Don't hesitate to follow ^^",
-//               "Mọi người yêu quý IDOL thì cho IDOL 1 follow ạ. Cám ơn mọi người",
-//               "Hi, please help by following IDOL. Thanks so much ❤️",
-//               "You feel sad? listen to the song. You feel happy 🥰? Follow and listen to many songs  ❤️❤️"
-//              ];
 var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 follow nha ❤️",
                "Ở đây có nhạc hay, idol xinh đẹp, admin cute :D Xin hãy follow đi ạ 😎",
                "Mọi người vào chơi vui vẻ và nhớ follow nha ❤️❤️❤️",
@@ -18,14 +8,14 @@ var chatmsg_normal = ["Mọi người vào rom cho IDOL xin 1 follow nha ❤️"
                "Có ai chưa follow không ạ? Follow đi mà, please....",
                "Bạn có cảm thấy buồn hay vui, thì vẫn có thể vào đây nhé. Ở đây chúng ta là 1 nhà mà ❤️",
                "idol đang cần 2000 follow, mọi người giúp 1 tay với ạ",
-			   "Hello guys, we need 3000 follow, could you please help?"
+               "Hello guys, we need 3000 follow, could you please help?"
               ];
 
 var chatmsg_egg = ["Mọi người vào lụm trứng cho IDOL xin 1 follow chúc mọi người một ngày zui ze ❤️❤️❤️",
-                   "Please follow the idol, we have a lot of eggs will be given out for you",
+                   "Hello, please follow idol to get any egg notification 😎",
                    "Chúc mọi người lụm được kim cương nha, yêu mọi người ❤️",
                    "Vào nhặt trúng có thể cho IDOL xin follow không UwU ❤️"
-				];
+                ];
                    
 var chatmsg_offline = [ "Hi mọi người, IDOL sẽ live sớm thôi, cám ơn mọi người đã chờ",
                        "Chào mọi người, xíu xíu nữa là IDOL sẽ online nhé ❤️",
@@ -33,7 +23,7 @@ var chatmsg_offline = [ "Hi mọi người, IDOL sẽ live sớm thôi, cám ơn
                        "Chỉ còn vài phút nữa thôi, mọi người chờ cùng em nhé"
                        ];
 
-var cmd = {"!rl" : load_keywords, "!ks" : keywords_status, "!rs" : reload_stream};
+var cmd = {"!rl" : load_keywords, "!ks" : keywords_status, "!rs" : reload_stream, "!stop" : stop_bot, "!start" : start_bot};
 var keywords;
 var keywords_load_finished = false;
 var msg_items;
@@ -64,7 +54,7 @@ $(document).ready(function(){
 });
 
 function read_chatitem() {
-	msg_items = document.getElementsByClassName('nimo-room__chatroom__message-item');
+    msg_items = document.getElementsByClassName('nimo-room__chatroom__message-item');
 }
 
 function keywords_status() {
@@ -91,7 +81,7 @@ function load_keywords() {
             keywords = json_data;
             keywords_load_finished = true;
             console.log("Finished loading keywords...")
-			reloadkw_callback();
+            reloadkw_callback();
         }
     };
     http.send();
@@ -104,6 +94,19 @@ function pause_stream() {
         setTimeout(pause_stream, 2000);
     } else {
         document.getElementsByClassName("nimo-icon nimo-icon-web-pause")[0].click();
+    }
+}
+
+function stop_bot() {
+    if(document.getElementById("button_stop")) {
+        $("#button_stop").click();    
+    }
+    
+}
+
+function start_bot() {
+    if(document.getElementById("button_play")) {
+        $("#button_play").click();    
     }
 }
 
@@ -131,7 +134,7 @@ function is_lastmessage_sent() {
 }
 function keyword_check() {
     if(kw_enable) {
-		read_chatitem();
+        read_chatitem();
         if(cbox_is_playable()) {
             try{
                 var msg = msg_items[msg_items.length-1].getElementsByClassName("n-as-vtm")[0].innerText;
@@ -139,7 +142,7 @@ function keyword_check() {
                     last_msg = msg;
                     var wlcm_msg = get_welcome_msg(last_msg);
                     if(wlcm_msg != "") {
-						last_msg = wlcm_msg;
+                        last_msg = wlcm_msg;
                         send_message(wlcm_msg, "WELCOME MSG");
                     }
                 }
