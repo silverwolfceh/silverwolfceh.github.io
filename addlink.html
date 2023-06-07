@@ -183,7 +183,7 @@
                     success: function(resp){
                         if ((resp.length > 4) && (resp.length < 9)) {
 							var url = location.origin;
-                            $('#urlneedShort').val(url + '?i=' + resp).select();
+                            $('#urlneedShort').val(url + '/redir.html?i=' + resp).select();
                             //$('#urlneedShort').attr('readonly', 'readonly');
 							$('#simple-msg').html(success_ops);
 							$('#btnsubmitArea').show();

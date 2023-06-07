@@ -36,7 +36,7 @@
 <body>
 
     <!-- Loader -->
-    <div id="preloader">
+    <div id="preloader1">
         <div id="status">
             <div class="sk-cube-grid">
                 <div class="sk-cube sk-cube1"></div>
@@ -80,28 +80,17 @@
             <div class="home-desc-center">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-lg-5">
+                        <div class="col-lg-7">
                             <div class="mt-40 home-2-content">
-                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Redirection</h1>
-								<h3><a href="addlink.html" style="color: yellow">> Add new url</a></h3>
-								<h3><a href="redir.html?i=5jb20" style="color: yellow">> My github</a></h3>
-								<h3><a href="redir.html?i=RzL21" style="color: yellow">> Source download</a></h3>
-					
-
-                                <div class="mt-5" id="goNow" style="display: none;">
-                                    <a href="#" class="btn btn-custom mr-4" id="urlgoNow">Redirect Now</a>
-                                </div>
+                                <h2 class="text-white font-weight-normal home-2-title display-8 mb-0" id="announce">Something wrong...</h2>
+                                <h3 class="text-white font-weight-normal home-2-title display-12 mb-0" id="detail">T_T</h3>
                             </div>
                         </div>
                         <!-- col end -->
 
-                        <div class="col-lg-7">
+                        <div class="col-lg-5">
                             <div class="mt-40 home-2-content position-relative">
-                                <img src="images/home-2-img.png" alt="" class="img-fluid mx-auto d-block home-2-img mover-img">
-                                <div class="home-2-bottom-img">
-                                    <img src="images/homr-2-bg-bottom.png" alt="" class="img-fluid d-block mx-auto">
-									
-                                </div>
+                                
                             </div>
                         </div>
                         <!-- col end -->
@@ -137,7 +126,36 @@
             });
         });
     </script>
-    
+    <script>
+        $(function(){
+            $('#goNow').hide();
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var code = url.searchParams.get("i");
+			if(code) {
+                $('#preloader1').delay(0).fadeIn('slow');
+				$('#announce').text('Loading URL, please wait ...');
+				$.ajax({
+                url: app_script_url + '?type=2&url=' + code,
+                type: 'GET',
+                success: function(resp){
+                    if ( (resp.length > 1) && (resp.includes("http")) ) {
+                        $('#detail').text('Redirecting to: ' + resp);
+                        $('#urlgoNow').attr('href', resp);
+                        $('#goNow').show();
+                        resp = decodeURI(resp);
+                        var wait3s = setTimeout(function(){ window.location = resp; }, 1000);
+                    } else {
+                        $('#detail').text("Can't find any url match with the code");
+                    }
+                },
+            });
+			} else {
+                var wait3s = setTimeout(function(){ window.location = "index.html"; }, 100);
+            }
+            
+        });
+    </script>
 
 </body>
 </html>
