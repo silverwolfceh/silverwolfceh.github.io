@@ -1,143 +1,296 @@
+<!-- 
+THEME: Small Apps | Bootstrap App Landing Template
+VERSION: 1.0.0
+AUTHOR: Themefisher
+
+HOMEPAGE: https://themefisher.com/products/small-apps-free-app-landing-page-template/
+DEMO: https://demo.themefisher.com/small-apps/
+GITHUB: https://github.com/themefisher/Small-Apps-Bootstrap-App-Landing-Template
+
+Get HUGO Version : https://themefisher.com/products/small-apps-hugo-app-landing-theme/
+
+WEBSITE: https://themefisher.com
+TWITTER: https://twitter.com/themefisher
+FACEBOOK: https://www.facebook.com/themefisher
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <title>URL Shortener</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="URL Shortener Service" />
-    <meta name="keywords" content="Shortener, URL Shortener, Free URL Shortener" />
-    <meta content="Themesbrand" name="author" />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
 
-    <!--Material Icon -->
-    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>ROKBOTS.XYZ |  Automation for Rise Of Kingdom</title>
 
-    <!-- Pixeden Icon -->
-    <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="ROKBOTS.XYZ |  Automation for Rise Of Kingdom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Small Apps Template v1.0">
 
-    <!--Slider-->
-    <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="stylesheet" href="css/owl.theme.css" />
-    <link rel="stylesheet" href="css/owl.transitions.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo-alt-1.png" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
 
-    <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta property="og:url"                content="https://silverwolfceh.github.io/" />
-    <meta property="og:type"               content="Redirection webpage" />
-    <meta property="og:title"              content="URL Shortener" />
-    <meta property="og:description"        content="URL Shortener Service" />
-    <meta property="og:image"              content="images/home-2-img.png" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/silverwolfceh/textdata/scripturl.js"></script> -->
+  <!-- CUSTOM CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
 </head>
-<body>
 
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="sk-cube-grid">
-                <div class="sk-cube sk-cube1"></div>
-                <div class="sk-cube sk-cube2"></div>
-                <div class="sk-cube sk-cube3"></div>
-                <div class="sk-cube sk-cube4"></div>
-                <div class="sk-cube sk-cube5"></div>
-                <div class="sk-cube sk-cube6"></div>
-                <div class="sk-cube sk-cube7"></div>
-                <div class="sk-cube sk-cube8"></div>
-                <div class="sk-cube sk-cube9"></div>
-            </div>
-        </div>
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="https://home.rokbots.xyz"><img src="images/logo-alt-1.png" alt="logo" width="45px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item @@home">
+			<a class="nav-link" href="https://rokbots.xyz/about">Home</a>
+		</li>
+		<li class="nav-item @@ac">
+			<a class="nav-link" href="https://rokbots.xyz">App Control</a>
+		</li>
+        <li class="nav-item @@about">
+          <a class="nav-link" href="https://stats.rokbots.xyz">Data analysis</a>
+        </li>
+        <li class="nav-item @@contact">
+          <a class="nav-link" href="https://discord.gg/PzJ7spKRdp">Contact</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky sticky-dark">
-        <div class="container">
-            <!-- LOGO -->
-            <a class="navbar-brand logo" href="index.html">
-                <img src="images/zooki.png" alt="" height="20">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="mdi mdi-menu"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                    <li class="nav-item active">
-                        <a href="addlink.html" class="nav-link">Add new url</a>
-                    </li>
-                </ul>
+<!--====================================
+=            Hero Section            =
+=====================================-->
+<section class="section gradient-banner">
+	<div class="shapes-container">
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
+				<h1 class="text-white font-weight-bold mb-4">You free, we work</h1>
+				<p class="text-white mb-5">Unlock the true potential of Rise of Kingdoms with our advanced bot! Harvest gems and resources effortlessly, and give the titles for players automatically. Level up your gameplay with our state-of-the-art automation technology.</p>
+				<a href="https://discord.gg/PzJ7spKRdp" class="btn btn-main-md">Get the bot Now</a>
+			</div>
+			<div class="col-md-6 text-center order-1 order-md-2">
+				<img class="img-fluid" src="images/mobile.png" alt="screenshot">
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Hero Section  ====-->
 
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+<section class="section pt-0 position-relative pull-top">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-white">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-paint-bucket text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Auto farm gems</h3>
+					<p class="regular text-muted">Up to 8000 gems per day with our advance image-detection technology to search and deploy farming march.</p>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-shine text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Auto farm rss</h3>
+					<p class="regular text-muted">Automatically farm the resources based on user selection. 24/7 without stopping </p>
+				</div>
+				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+					<i class="ti-thought text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Auto title & data analysis</h3>
+					<p class="regular text-muted">Auto title given to your kingdom members at any time. Scan and analysis data top 300, 600...with a friendly UI</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <!-- HOME START -->
-    <section class="section home-2-bg" id="home">
-        <div class="home-center">
-            <div class="home-desc-center">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5">
-                            <div class="mt-40 home-2-content">
-                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Redirection</h1>
-								<h3><a href="addlink.html" style="color: yellow">> Add new url</a></h3>
-								<h3><a href="redir.html?i=5jb20" style="color: yellow">> My github</a></h3>
-								<h3><a href="redir.html?i=RzL21" style="color: yellow">> Source download</a></h3>
-					
+<!--==================================
+=            Feature Grid            =
+===================================-->
+<section class="feature section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 ml-auto justify-content-center">
+				<!-- Feature Mockup -->
+				<div class="image-content" data-aos="fade-right">
+					<img class="img-fluid" src="images/feature-new-01.jpg" alt="iphone">
+				</div>
+			</div>
+			<div class="col-lg-6 mr-auto align-self-center">
+				<div class="feature-content">
+					<!-- Feature Title -->
+					<h2>Maximize your gameplay experience with our Rokbots</a></h2>
+					<!-- Feature Description -->
+					<p class="desc">Our bots provide an easy to setup, easy to control and state of the art functionalities where you can't find on the market</p>
+					<p class="desc">Especially, with advanced anti-ban mechanism like: IP rotation, auto on-off the bot, auto detect and solve captcha... You can totally enjoy the game without limitation </p>
+				</div>
+				<!-- Testimonial Quote -->
+				<div class="testimonial">
+					<p>
+						"Play smarter but not harder if you are not a whale :)"
+					</p>
+					<ul class="list-inline meta">
+						<li class="list-inline-item">
+							<img src="images/feature-testimonial-thumb.jpg" alt="">
+						</li>
+						<li class="list-inline-item">Panda , King of kd2824</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-                                <div class="mt-5" id="goNow" style="display: none;">
-                                    <a href="#" class="btn btn-custom mr-4" id="urlgoNow">Redirect Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col end -->
+<!--====  End of Feature Grid  ====-->
+<!--=================================
+=            Testimonial            =
+==================================-->
+<section class="section testimonial" id="testimonial">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- Testimonial Slider -->
+				<div class="testimonial-slider owl-carousel owl-theme">
+					<!-- Testimonial 01 -->
+					<div class="item">
+						<div class="block shadow">
+							<!-- Speech -->
+							<p>
+								It is a very good bots. I can save more than $1000 with this bot. I got VIP16 in 350 days.
+							</p>
+							<!-- Person Thumb -->
+							<div class="image">
+								<img src="images/feature-testimonial-thumb.jpg" alt="image">
+							</div>
+							<!-- Name and Company -->
+							<cite>Gov: GaConLonTon</cite>
+						</div>
+					</div>
+					<!-- Testimonial 01 -->
+					<div class="item">
+						<div class="block shadow">
+							<!-- Speech -->
+							<p>
+								It is an amazing experience. I used to use other bots but got banned. After I try this bot, it is a big wow. 
+							</p>
+							<!-- Person Thumb -->
+							<div class="image">
+								<img src="images/feature-testimonial-thumb.jpg" alt="image">
+							</div>
+							<!-- Name and Company -->
+							<cite>Gov: SpiderCat</cite>
+						</div>
+					</div>
+					<!-- Testimonial 01 -->
+					<div class="item">
+						<div class="block shadow">
+							<!-- Speech -->
+							<p>
+								Cheap, effectively and elegant are three words for this bot. UI is friendly, control mechanism everywhere you go.
+							</p>
+							<!-- Person Thumb -->
+							<div class="image">
+								<img src="images/feature-testimonial-thumb.jpg" alt="image">
+							</div>
+							<!-- Name and Company -->
+							<cite>Gov: NoRealName</cite>
+						</div>
+					</div>
+					<!-- Testimonial 01 -->
+					<div class="item">
+						<div class="block shadow">
+							<!-- Speech -->
+							<p>
+								Save a lot of time and money, enjoy the game and become a smart player thanks to this bot.
+							</p>
+							<!-- Person Thumb -->
+							<div class="image">
+								<img src="images/feature-testimonial-thumb.jpg" alt="image">
+							</div>
+							<!-- Name and Company -->
+							<cite>Gov: _Gasm</cite>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Testimonial  ====-->
 
-                        <div class="col-lg-7">
-                            <div class="mt-40 home-2-content position-relative">
-                                <img src="images/home-2-img.png" alt="" class="img-fluid mx-auto d-block home-2-img mover-img">
-                                <div class="home-2-bottom-img">
-                                    <img src="images/homr-2-bg-bottom.png" alt="" class="img-fluid d-block mx-auto">
-									
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col end -->
-                    </div>
-                    <!-- row end -->
-                </div>
-                <!-- container end -->
-            </div>
-        </div>
-    </section>
-    <!-- HOME END -->
+<section class="call-to-action-app section bg-blue">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2>It's time to change your mind</h2>
+				<p>Go to our discord server <a href="https://discord.gg/PzJ7spKRdp" style="color: red; text-decoration: double;">Rokbots Discord</a> and get a quote.
+					<br>We say you won’t look back.</p>
+				
+			</div>
+		</div>
+		<div class="block">
+            <a href="https://home.rokbots.xyz"><img src="images/logo-alt-1.png" alt="footer-logo" width="150px"></a>
+            <!-- Social Site Icons -->
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/themefisher"><i class="ti-headphone-alt"></i></a>
+              </li>
+            </ul>
+          </div>
+	</div>
+</section>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/scrollspy.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/anime.min.js"></script>
-    <!-- carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Main Js -->
-    <script src="js/app.js"></script>
-    <script src="js/appurl.js"></script>
-    <script>
-        //owlCarousel
-        $(document).ready(function() {
-        
-            $("#owl-demo").owlCarousel({
-                autoPlay: 3000, //Set AutoPlay to 3 seconds
-                items: 2,
-                itemsDesktop: [1199, 2],
-                itemsDesktopSmall: [979, 2]
 
-            });
-        });
-    </script>
-    
-
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+  <script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+  <script src="plugins/aos/aos.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
