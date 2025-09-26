@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script>
+    Office.initialize = () => {};
+
+    async function runAI(event) {
+      try {
+        const item = Office.context.mailbox.item;
+
+        // subject + ids
+        const subject = item.subject || "";
+        const itemId = item.itemId || null;               // may be null in compose until saved
+        const internetId = item.internetMessageId || null; // needs rs 1.8+, may be null in compose
+        const conversationId = item.conversationId || null;
+
+        const body = await getBodyText(item); // plain text body
+
+        // basic participants (best-effort across read/compose)
+        const from = item.from?.emailAddress || item.from?.address || null;
+        const to = (item.to || []).map(x => x.emailAddress || x.address);
+
+        await fetch("https://YOUR_API/ingest", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({subject, itemId, internetId, conversationId, from, to, body})
+        });
+      } catch (e) {
+        console.error(e);
+      } finally {
+        event.completed();
+      }
+    }
+
+    function getBodyText(item) {
+      return new Promise((resolve, reject) => {
+        // Works in both read and compose; choose "text" to avoid HTML noise
+        item.body.getAsync("text", res => {
+          if (res.status === Office.AsyncResultStatus.Succeeded) resolve(res.value || "");
+          else reject(res.error);
+        });
+      });
+    }
+
+    // Expose for the manifest onAction
+    window.runAI = runAI;
+  </script>
+</head>
+<body>AI Assist function file</body>
+</html>

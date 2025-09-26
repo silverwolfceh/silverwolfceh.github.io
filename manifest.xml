@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+           xsi:type="MailApp">
+  <Id>f7f6e0a1-7a6f-4c5f-9f1e-aia-000000000001</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Your Org</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="AI Assist"/>
+  <Description DefaultValue="Send message content to your AI API"/>
+  <IconUrl DefaultValue="https://YOUR_HTTPS_HOST/icon32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://YOUR_HTTPS_HOST/icon80.png"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.8">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://YOUR_HTTPS_HOST/functions.html"/>
+      </DesktopSettings>
+    </Form>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://YOUR_HTTPS_HOST/functions.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <!-- Ribbon/command surface: READ -->
+        <ExtensionPoint xsi:type="MessageReadCommandSurface">
+          <OfficeTab id="TabDefault">
+            <Group id="grpAiRead" label="AI Assist">
+              <Control xsi:type="Button" id="btnAiRead"
+                       label="AI Assist"
+                       icon="https://YOUR_HTTPS_HOST/icon32.png"
+                       onAction="runAI"/>
+            </Group>
+          </OfficeTab>
+        </ExtensionPoint>
+
+        <!-- Ribbon/command surface: COMPOSE -->
+        <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+          <OfficeTab id="TabDefault">
+            <Group id="grpAiCompose" label="AI Assist">
+              <Control xsi:type="Button" id="btnAiCompose"
+                       label="AI Assist"
+                       icon="https://YOUR_HTTPS_HOST/icon32.png"
+                       onAction="runAI"/>
+            </Group>
+          </OfficeTab>
+        </ExtensionPoint>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon32" DefaultValue="https://YOUR_HTTPS_HOST/icon32.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="funcPage" DefaultValue="https://YOUR_HTTPS_HOST/functions.html"/>
+      </bt:Urls>
+      <bt:String id="resLabel" DefaultValue="AI Assist"/>
+    </Resources>
+
+    <WebApplicationInfo>
+      <!-- Leave empty if you don’t call Graph; fill for SSO later -->
+      <Id>00000000-0000-0000-0000-000000000000</Id>
+      <Resource>api://localhost/placeholder</Resource>
+      <Scopes></Scopes>
+    </WebApplicationInfo>
+  </VersionOverrides>
+</OfficeApp>
